@@ -33,7 +33,7 @@ set wildignore+=*.png,*.jpg,*.gif,*.ai,*.jpeg,*.psd,*.swp,*.jar,*.zip,*.gem,.DS_
 autocmd BufRead *.html.erb set ft=eruby.html
 autocmd BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 
-set nofoldenable " Fuck code folding...
+" set noldenable " Fuck code folding...
 
 set whichwrap+=<,>,h,l " allow backspace and cursor keys to cross line boundaries
 
@@ -62,6 +62,9 @@ map <D-k> <C-u>
 
 " map Shift-U to REDO
 map <S-u> <C-r>
+
+" map F5 to FuzzyFile
+map <F5> :FufFile
 
 " set the LEADER key to ,
 let mapleader = ","
