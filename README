@@ -1,8 +1,8 @@
 This is an extension of the vimconfig found at  git://github.com/railsjedi/snipmate-snippets.git
 
-== Changes
-1. Uses the much nicer Zenburn theme found here: http://slinky.imukuppi.org/zenburnpage/ ;)
-2. Uses FuzzyFinder
+Changes
+* Uses the much nicer Zenburn theme found here: http://slinky.imukuppi.org/zenburnpage/ ;)
+* Uses FuzzyFinder
 
 Here's a nice video demonstrating a few plugins: http://www.youtube.com/watch?v=_galFWwSDt0
 
