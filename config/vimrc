@@ -64,7 +64,10 @@ map <D-k> <C-u>
 map <S-u> <C-r>
 
 " map F5 to FuzzyFile
-map <F5> :FufFile
+map <F5> :FufFile<CR>
+
+" map F4 to NERDTree
+map <F4> :NERDTree<CR>
 
 " set the LEADER key to ,
 let mapleader = ","
