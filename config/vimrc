@@ -69,6 +69,9 @@ map <F5> :FufFile<CR>
 " map F4 to NERDTree
 map <F4> :NERDTree<CR>
 
+" map F6 to FuzzyFinder
+nmap <F6> :FufFile **/<CR>
+
 " set the LEADER key to ,
 let mapleader = ","
 
