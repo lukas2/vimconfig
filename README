@@ -1,8 +1,9 @@
-This is an extension of the very nice vimconfig found at https://github.com/railsjedi/vimconfig.git
+This is an extension of the very nice vimconfig found at https://github.com/railsjedi/vimconfig
 
 Changes
 * Uses the much nicer Zenburn theme found here: http://slinky.imukuppi.org/zenburnpage/ 
 * Uses FuzzyFinder
+* Small tweaks
 
 Here's a nice video demonstrating a few plugins: http://www.youtube.com/watch?v=_galFWwSDt0
 
@@ -10,7 +11,7 @@ to use:
 - clone this repo somewhere (I have it at ~/Vim/config)
     
     mkdir ~/Vim
-    git clone git://github.com/lukas2/vimconfig.git ~/Vim/config
+    git clone git://github.com/lukas2/vimconfig.git ~/Vim
 
 - symlink the vim files to where you cloned it
     
