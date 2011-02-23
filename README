@@ -1,5 +1,7 @@
 This is an extension of the vimconfig found at  git://github.com/railsjedi/snipmate-snippets.git
 
+Uses the much nicer Zenburn theme found here: http://slinky.imukuppi.org/zenburnpage/ ;)
+
 to use:
 - clone this repo somewhere (I have it at ~/Vim/config)
     
