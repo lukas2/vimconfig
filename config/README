@@ -1,0 +1,18 @@
+This is an extension of the vimconfig found at  git://github.com/railsjedi/snipmate-snippets.git
+
+to use:
+- clone this repo somewhere (I have it at ~/Vim/config)
+    
+    mkdir ~/Vim
+    git clone git://github.com/railsjedi/vimconfig.git ~/Vim/config
+
+- symlink the vim files to where you cloned it
+    
+    ln -s $HOME/Vim/config ~/.vim
+    ln -s $HOME/Vim/config/vimrc ~/.vimrc
+    ln -s $HOME/Vim/config/gvimrc ~/.gvimrc
+
+- clone my awesome snippet repo (or fork it and clone your own) 
+
+    git://github.com/railsjedi/snipmate-snippets.git ~/Vim/snippets
+    ln -s $HOME/Vim/snippets ~/Vim/config/snippets
