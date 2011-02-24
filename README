@@ -5,6 +5,8 @@ Changes
 * Uses FuzzyFinder
 * Small tweaks
 
+Note: You need a recent Vim, 7.3 works, but 7.2 should suffice. It doesn't work with 7.1 (Ubuntu 8.4 Standard) for me.
+
 Here's a nice video demonstrating a few plugins: http://www.youtube.com/watch?v=_galFWwSDt0
 
 to use:
