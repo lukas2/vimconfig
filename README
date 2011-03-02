@@ -3,6 +3,7 @@ This is an extension of the very nice vimconfig found at https://github.com/rail
 Changes
 * Uses the much nicer Zenburn theme found here: http://slinky.imukuppi.org/zenburnpage/ 
 * Uses FuzzyFinder
+* Uses Syntastic
 * Small tweaks
 
 Note: You need a recent Vim, 7.3 works, but 7.2 should suffice. It doesn't work with 7.1 (Ubuntu 8.4 Standard) for me.
