@@ -4,7 +4,18 @@ set nocompatible
 " load all the bundles
 call pathogen#runtime_append_all_bundles()
 
-colorscheme zenburn
+" COLORS:
+
+ colorscheme zenburn
+
+" uncomment next 7 lines to use the solarized color scheme.
+" colorscheme solarized
+" 
+" if has('gui_running')
+"   set background=light
+" else
+"   set background=dark
+" endif
 
 filetype plugin indent on
 syntax on
