@@ -6,16 +6,16 @@ call pathogen#runtime_append_all_bundles()
 
 " COLORS:
 
- colorscheme zenburn
+" colorscheme zenburn
 
 " uncomment next 7 lines to use the solarized color scheme.
-" colorscheme solarized
+colorscheme solarized
 " 
-" if has('gui_running')
-"   set background=light
-" else
-"   set background=dark
-" endif
+if has('gui_running')
+  set background=dark
+else
+  set background=dark
+endif
 
 filetype plugin indent on
 syntax on
@@ -106,8 +106,8 @@ map <leader>n :NERDTree<CR>
 map <leader><S-d> :NERDTree %:p:h<CR> 
 
 " NERD Commenter Sucks balls. Use tComment instead!
-nmap <D-/> gc
-vmap <D-/> gcgv
+nmap <D-1> gc
+vmap <D-1> gcgv
 
 " Toggle show invisibles
 nmap <leader>l :set list!<CR>
