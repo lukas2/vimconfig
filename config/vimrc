@@ -1,6 +1,15 @@
 " no vi compatibility
 set nocompatible
 
+" I found it useful to uncomment the following lines for gvim in Ubuntu Desktop:
+"
+" this will enable CTRL-C, CTRL-V, CTRL-X, but visual mode is then CTRL-Q
+" see http://superuser.com/questions/10588/how-to-make-cut-copy-paste-in-gvim-on-ubuntu-work-with-ctrlx-ctrlc-ctrlv
+"
+" source $VIMRUNTIME/mswin.vim
+" behave mswin
+" set clipboard=unnamed
+
 " load all the bundles
 call pathogen#runtime_append_all_bundles()
 
