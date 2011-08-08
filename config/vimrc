@@ -83,6 +83,10 @@ endfunction
 map <C-right> <ESC>:bn<CR>
 map <C-left> <ESC>:bp<CR>
 
+" map control up and down to navigate between tabs
+map <C-up> :tabprevious<CR>
+map <C-down> :tabnext<CR>
+
 " map Command-j to Scroll Down
 map <D-j> <C-d>
 " map Command-k to Scroll Up
