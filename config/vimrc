@@ -87,6 +87,17 @@ map <C-left> <ESC>:bp<CR>
 map <C-up> :tabprevious<CR>
 map <C-down> :tabnext<CR>
 
+" above for macvim, however with SHIFT-CMD
+map <S-D-right> <ESC>:bn<CR>
+map <S-D-left> <ESC>:bp<CR>
+map <S-D-up> :tabprevious<CR>
+map <S-D-down> :tabnext<CR>
+
+" also map 1 - 10 to tabs:
+for i in range(1, 9) 
+  exec "nnoremap <D-".i."> ".i."gt" 
+endfor 
+
 " map Command-j to Scroll Down
 map <D-j> <C-d>
 " map Command-k to Scroll Up
@@ -119,8 +130,8 @@ map <leader>n :NERDTree<CR>
 map <leader><S-d> :NERDTree %:p:h<CR> 
 
 " NERD Commenter Sucks balls. Use tComment instead!
-nmap <D-1> gc
-vmap <D-1> gcgv
+" nmap <D-1> gc
+" vmap <D-1> gcgv
 
 " Toggle show invisibles
 nmap <leader>l :set list!<CR>
