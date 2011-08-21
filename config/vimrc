@@ -172,6 +172,7 @@ map <leader>ew :e <C-R>=expand("%:p:h") . "/" <CR>
 map <leader>es :sp <C-R>=expand("%:p:h") . "/" <CR>
 map <leader>ev :vsp <C-R>=expand("%:p:h") . "/" <CR>
 map <leader>et :tabe <C-R>=expand("%:p:h") . "/" <CR>
+map <leader>tn :tabnew<CR>
 
 " Replicate textmate shift arrow/movement in order to select stuff
 nmap <S-up> vk
@@ -199,4 +200,50 @@ nmap <leader><S-s> :call Preserve("%s/\\s\\+$//e")<CR>
 
 " Retab the document (tabs to spaces)
 nmap <silent> <leader><S-t> :retab!<CR>
+
+" Open browser (on osx open will open default browser)
+function! Browser ()
+   let line = getline (".")
+   let line = matchstr (line, "http[^   ]*")
+   exec "!open ".line
+endfunction
+
+" Open Url on this line with the browser \w
+map <Leader>w :call Browser ()<CR>
+
+" Rotate themes -> found this here: http://stackoverflow.com/questions/164847/what-is-in-your-vimrc
+let themeindex=0
+function! RotateColorTheme()
+   let y = -1
+   while y == -1
+      let colorstring = "default#solarized#zenburn#"
+      let x = match( colorstring, "#", g:themeindex )
+      let y = match( colorstring, "#", x + 1 )
+      let g:themeindex = x + 1
+      if y == -1
+         let g:themeindex = 0
+      else
+         let themestring = strpart(colorstring, x + 1, y - x - 1)
+         return ":colorscheme ".themestring
+      endif
+   endwhile
+endfunction
+
+" Rotate Color Scheme ,ee
+nnoremap <silent> <Leader>ee :execute RotateColorTheme()<CR>
+
+" Edit vimrc ,ev
+nnoremap <silent> <Leader>ev :tabnew<CR>:e ~/.vimrc<CR>
+
+" Edit gvimrc ,gv
+nnoremap <silent> <Leader>gv :tabnew<CR>:e ~/.gvimrc<CR>
+
+" Create Blank Newlines and stay in Normal mode
+nnoremap <silent> zj o<Esc>
+nnoremap <silent> zk O<Esc>
+
+" Space will toggle folds!
+nnoremap <space> za
+
+
 
