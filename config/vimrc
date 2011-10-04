@@ -175,25 +175,25 @@ map <leader>et :tabe <C-R>=expand("%:p:h") . "/" <CR>
 map <leader>tn :tabnew<CR>
 
 " Replicate textmate shift arrow/movement in order to select stuff
-nmap <S-up> vk
-vmap <S-up> k
-nmap <S-k> vk
-vmap <S-k> k
-
-nmap <S-right> vl
-vmap <S-right> l
-nmap <S-l> vl
-vmap <S-l> l
-
-nmap <S-down> vj
-vmap <S-down> j
-nmap <S-j> vj
-vmap <S-j> j
-
-nmap <S-left> v
-vmap <S-left> h
-nmap <S-h> vh
-vmap <S-h> h
+" nmap <S-up> vk
+" vmap <S-up> k
+" nmap <S-k> vk
+" vmap <S-k> k
+" 
+" nmap <S-right> vl
+" vmap <S-right> l
+" nmap <S-l> vl
+" vmap <S-l> l
+" 
+" nmap <S-down> vj
+" vmap <S-down> j
+" nmap <S-j> vj
+" vmap <S-j> j
+" 
+" nmap <S-left> v
+" vmap <S-left> h
+" nmap <S-h> vh
+" vmap <S-h> h
 
 " Clean up the trailing spaces
 nmap <leader><S-s> :call Preserve("%s/\\s\\+$//e")<CR>
