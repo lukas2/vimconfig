@@ -61,8 +61,6 @@ set wildignore+=*.png,*.jpg,*.gif,*.ai,*.jpeg,*.psd,*.swp,*.jar,*.zip,*.gem,.DS_
 autocmd BufRead *.html.erb set ft=eruby.html
 autocmd BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 
-" set noldenable " Fuck code folding...
-
 set whichwrap+=<,>,h,l " allow backspace and cursor keys to cross line boundaries
 
 " A vim function that keeps your state
@@ -168,6 +166,12 @@ map <leader>ev :vsp <C-R>=expand("%:p:h") . "/" <CR>
 map <leader>et :tabe <C-R>=expand("%:p:h") . "/" <CR>
 map <leader>tn :tabnew<CR>
 
+" Quick jumping between splits
+map <C-J> <C-W>j<C-W>
+map <C-K> <C-W>k<C-W>
+map <C-H> <C-W>h<C-W>
+map <C-L> <C-W>l<C-W>
+
 " Replicate textmate shift arrow/movement in order to select stuff
 " nmap <S-up> vk
 " vmap <S-up> k
@@ -238,6 +242,4 @@ nnoremap <silent> zk O<Esc>
 
 " Space will toggle folds!
 nnoremap <space> za
-
-
 
