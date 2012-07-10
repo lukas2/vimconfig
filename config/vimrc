@@ -1,12 +1,13 @@
-" plugins
-"
-filetype off
-call pathogen#runtime_append_all_bundles()
-filetype plugin indent on
-set nocompatible
-set modelines=0
+  " plugins
+  "
+  filetype off
+  call pathogen#runtime_append_all_bundles()
+  filetype plugin indent on
+  set nocompatible
+  set modelines=0
 
 colorscheme zenburn
+set background=dark
 
 " tabs
 "
@@ -27,13 +28,14 @@ set hidden           " keep changes in buffers
 set wildmenu
 set wildmode=list:longest
 set visualbell       " disable beeping
-set cursorline       " highlight current line
+set nocursorline      
 set ttyfast          " better redrawing
 set ruler            " constant ruler at bottom of screen
 set backspace=indent,eol,start
 set laststatus=2     " statusline at bottom
 set relativenumber   " relative line-numbering
 set undofile
+set undodir=/tmp
 set wrap
 set list             " show invisibles
 
@@ -66,9 +68,6 @@ set gdefault
 nnoremap <leader><space> :noh<cr> " remove search results highlight
 nnoremap <tab> %                  " jump to next bracket with tab
 vnoremap <tab> %
-
-" type ; instead of :
-nnoremap ; :
 
 " strip all trailing whitespace in current file
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
