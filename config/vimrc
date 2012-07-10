@@ -1,46 +1,45 @@
-" no vi compatibility
-set nocompatible
-
-" I found it useful to uncomment the following lines for gvim in Ubuntu Desktop:
+" plugins
 "
-" this will enable CTRL-C, CTRL-V, CTRL-X, but visual mode is then CTRL-Q
-" see http://superuser.com/questions/10588/how-to-make-cut-copy-paste-in-gvim-on-ubuntu-work-with-ctrlx-ctrlc-ctrlv
-"
-" source $VIMRUNTIME/mswin.vim
-" behave mswin
-" set clipboard=unnamed
-
-" load all the bundles
+filetype off
 call pathogen#runtime_append_all_bundles()
-
-" COLORS:
-
-" colorscheme zenburn
-
-" uncomment next 7 lines to use the solarized color scheme.
-colorscheme deveiate
-" 
-if has('gui_running')
-  set background=dark
-else
-  set background=dark
-endif
-
 filetype plugin indent on
+set nocompatible
+set modelines=0
+
+colorscheme zenburn
+
+" tabs
+"
+set tabstop=2     " Use 2 spaces for tabs
+set smarttab      " Automatic indenting
+set shiftwidth=2  " sets spaces used for indention
+set autoindent    " continue indention from previous line
+set expandtab     " tab key inserts spaces instead of tabs
+set backspace=2   " start,indent
+
+" general
+"
+set encoding=utf-8
+set scrolloff=3      " number of lines below/above cursor when scrolling
+set showmode
+set showcmd
+set hidden           " keep changes in buffers
+set wildmenu
+set wildmode=list:longest
+set visualbell       " disable beeping
+set cursorline       " highlight current line
+set ttyfast          " better redrawing
+set ruler            " constant ruler at bottom of screen
+set backspace=indent,eol,start
+set laststatus=2     " statusline at bottom
+set relativenumber   " relative line-numbering
+set undofile
+set nowrap
+set list             " show invisibles
+
 syntax on
 
-" General Settings
-set nowrap
-set hidden
-set list "show invisibles
 
-" Tabs
-set tabstop=2 " Use 2 spaces for tabs
-set smarttab " Automatic indenting
-set shiftwidth=2 " sets spaces used for indention
-set autoindent " continue indention from previous line
-set expandtab " tab key inserts spaces instead of tabs
-set backspace=2 " start,indent
 
 " Syntastic - Syntax checker
 set statusline+=%#warningmsg#
@@ -60,6 +59,8 @@ set wildignore+=*.png,*.jpg,*.gif,*.ai,*.jpeg,*.psd,*.swp,*.jar,*.zip,*.gem,.DS_
 " additional support for some file types
 autocmd BufRead *.html.erb set ft=eruby.html
 autocmd BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
+
+" set noldenable " Fuck code folding...
 
 set whichwrap+=<,>,h,l " allow backspace and cursor keys to cross line boundaries
 
@@ -165,12 +166,6 @@ map <leader>es :sp <C-R>=expand("%:p:h") . "/" <CR>
 map <leader>ev :vsp <C-R>=expand("%:p:h") . "/" <CR>
 map <leader>et :tabe <C-R>=expand("%:p:h") . "/" <CR>
 map <leader>tn :tabnew<CR>
-
-" Quick jumping between splits
-map <C-J> <C-W>j<C-W>
-map <C-K> <C-W>k<C-W>
-map <C-H> <C-W>h<C-W>
-map <C-L> <C-W>l<C-W>
 
 " Replicate textmate shift arrow/movement in order to select stuff
 " nmap <S-up> vk
