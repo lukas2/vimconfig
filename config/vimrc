@@ -34,14 +34,57 @@ set backspace=indent,eol,start
 set laststatus=2     " statusline at bottom
 set relativenumber   " relative line-numbering
 set undofile
-set nowrap
+set wrap
 set list             " show invisibles
 
+" set textwidth=79
+" set formatoptions=qrn1
+" set colorcolumn=85
+
+
 syntax on
+
+let mapleader = ","
+
+" default regex
+"
+nnoremap / /\v
+vnoremap / /\v
+
+" search defaults
+"
+set ignorecase
+set smartcase
+set incsearch
+set showmatch
+set hlsearch
+
+" /g default, f.ex. :s/a/b/ instead of :s/a/b/g
+"
+set gdefault
+
+nnoremap <leader><space> :noh<cr> " remove search results highlight
+nnoremap <tab> %                  " jump to next bracket with tab
+vnoremap <tab> %
+
+" type ; instead of :
+nnoremap ; :
+
+" strip all trailing whitespace in current file
+nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
+
+" fold tag (html)
+nnoremap <leader>ft Vatzf
+
+" reselect text just pasted
+nnoremap <leader>r V`]
+
+
 
 
 
 " Syntastic - Syntax checker
+"
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -51,16 +94,14 @@ let g:syntastic_auto_jump=1
 
 " Do not use swapfiles or backup since writebackup is used
 " writebackup is still used, so a copy is always kept in memory
-set nobackup " Do not write backup files to disk
-set noswapfile " Do not use swapfiles (they have trouble with large files)
+set nobackup    " Do not write backup files to disk
+set noswapfile  " Do not use swapfiles (they have trouble with large files)
 
 set wildignore+=*.png,*.jpg,*.gif,*.ai,*.jpeg,*.psd,*.swp,*.jar,*.zip,*.gem,.DS_Store,log/**,tmp/**,coverage/**,rdoc/**
 
 " additional support for some file types
 autocmd BufRead *.html.erb set ft=eruby.html
 autocmd BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
-
-" set noldenable " Fuck code folding...
 
 set whichwrap+=<,>,h,l " allow backspace and cursor keys to cross line boundaries
 
@@ -120,8 +161,6 @@ nmap ,f :FufFileWithCurrentBufferDir<CR>
 nmap ,b :FufBuffer<CR>
 nmap ,t :FufTaggedFile<CR>
 
-" set the LEADER key to ,
-let mapleader = ","
 
 " Leader-v reloads the vimrc -- making all changes active (have to save first)
 map <silent> ,v :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>:NERDTreeClose<CR>
@@ -137,9 +176,6 @@ map <leader><S-d> :NERDTree %:p:h<CR>
 " NERD Commenter Sucks balls. Use tComment instead!
 " nmap <D-1> gc
 " vmap <D-1> gcgv
-
-" Toggle show invisibles
-nmap <leader>l :set list!<CR>
 
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
@@ -167,42 +203,8 @@ map <leader>ev :vsp <C-R>=expand("%:p:h") . "/" <CR>
 map <leader>et :tabe <C-R>=expand("%:p:h") . "/" <CR>
 map <leader>tn :tabnew<CR>
 
-" Replicate textmate shift arrow/movement in order to select stuff
-" nmap <S-up> vk
-" vmap <S-up> k
-" nmap <S-k> vk
-" vmap <S-k> k
-" 
-" nmap <S-right> vl
-" vmap <S-right> l
-" nmap <S-l> vl
-" vmap <S-l> l
-" 
-" nmap <S-down> vj
-" vmap <S-down> j
-" nmap <S-j> vj
-" vmap <S-j> j
-" 
-" nmap <S-left> v
-" vmap <S-left> h
-" nmap <S-h> vh
-" vmap <S-h> h
-
-" Clean up the trailing spaces
-nmap <leader><S-s> :call Preserve("%s/\\s\\+$//e")<CR>
-
 " Retab the document (tabs to spaces)
 nmap <silent> <leader><S-t> :retab!<CR>
-
-" Open browser (on osx open will open default browser)
-function! Browser ()
-   let line = getline (".")
-   let line = matchstr (line, "http[^   ]*")
-   exec "!open ".line
-endfunction
-
-" Open Url on this line with the browser \w
-map <Leader>w :call Browser ()<CR>
 
 " Rotate themes -> found this here: http://stackoverflow.com/questions/164847/what-is-in-your-vimrc
 let themeindex=0
@@ -237,4 +239,3 @@ nnoremap <silent> zk O<Esc>
 
 " Space will toggle folds!
 nnoremap <space> za
-
